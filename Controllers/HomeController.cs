@@ -24,6 +24,41 @@ namespace BincomProject.Controllers
             return View();
         }
 
+        public IActionResult About()
+        {
+            return View();
+        }
+        public IActionResult Education()
+        {
+            return View();
+        }
+        public IActionResult Experience()
+        {
+            return View();
+        }
+        public IActionResult Skills()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult TaxCalculator()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult TaxCalculator(decimal income)
+        {
+            decimal tax = Services.TaxCalculatorService.CalculateTax(income);
+
+            ViewData["Tax"] = tax;
+            ViewData["Income"] = income;
+
+            return View();
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

@@ -1,0 +1,16 @@
+﻿<h1>Tax Calculator</h1>
+
+<form method="post">
+    <label>Monthly Income</label><br />
+    <input type="number" name="income" step="0.01" required />
+    <br /><br />
+    <button type="submit">Calculate</button>
+</form>
+
+@if (ViewData["Tax"] != null)
+{
+    <p>
+        Income: @ViewData["Income"] <br />
+        Tax: @ViewData["Tax"]
+    </p>
+}
